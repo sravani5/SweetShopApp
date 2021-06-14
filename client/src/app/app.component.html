@@ -1,0 +1,34 @@
+<div class="menu">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" 
+                  data-toggle="collapse" data-target="#navbar2">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand">
+             <img src="../../assets/images/logo-1.png" alt="User Image">
+             <span class="magic_label"> Magic </span>
+          </a>
+      </div>
+      <div id="navbar2" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+           <!--  <li><a [routerLink]="['order']"><span>TotalOrders</span></a></li>
+            <li><a [routerLink]="['order']"><span>Order</span></a></li> -->
+            <li><a [routerLink]="['about']"><span>About</span></a></li>
+            <li><a [routerLink]="['menu']"><span>Menu</span></a></li>
+            <li><a [routerLink]="['admin']"><span>Admin</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="router-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+
+

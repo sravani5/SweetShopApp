@@ -1,0 +1,52 @@
+ <div class="router-content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="col-md-8">
+           <div class="col-md-4" *ngFor="let items of listOfItems;let i = index">
+            <div class="items">
+                <div class="itemsList">
+                   <img src="{{items.img}}" class="img-responsive" 
+                        alt="Cinque Terre"/>
+                    <p>{{items.Description}}</p>
+                    <span class="badge">Rs.{{items.price}}</span>
+                    <label>Type:</label> 
+                    <select [(ngModel)]="listOfItems[i].type">
+                         <option *ngFor="let itemsType of items.Types">{{itemsType}}</option>
+                    </select><br>
+                    <label>Total Pieces:</label><input type="number"  min="0" max="100" [(ngModel)]="listOfItems[i].total" (ngModelChange)="onChange($event,i)">
+                    <label>Total Amount:</label>{{listOfItems[i].totalAmt}}<br>
+                    <button type="button" class="btn btn-default addcart" (click)="addCart(listOfItems[i])">Add to cart</button>
+                </div>
+              </div>
+            </div>
+         </div>
+        <div class="col-md-4">
+          <div class="cartitems">
+            <div class="items">
+              <h4>CART</h4>
+              <table class="table table-striped">
+                 <thead>
+                    <tr>
+                       <th>Icecream Name:</th>
+                       <th> Icecream Type:</th>
+                       <th>Quantity:</th>
+                       <th>Amount:</th>
+                    </tr>
+                 </thead>
+                <tr *ngFor="let orderList of customerOrder;let i = index">
+                    <td>{{orderList.IcecrreamName}}</td>
+                    <td>{{orderList.IcecreamType}}</td>
+                    <td>{{orderList.Qunatity}}</td>
+                    <td>Rs.{{orderList.TotalAmount}}<i class="fa fa-times-circle-o close_icon" aria-hidden="true" (click)="removeOrder(i)"></i></td>
+                </tr>
+              </table>
+              <label>Grand Total:</label>Rs.{{TotalPrice}}<br>
+            </div>
+            <button type="button" class="btn btn-default addcart" (click)="placeOrder()">Place Order</button>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,26 @@
+  <div class="orderlist">
+<table class="responsive-table highlight">
+                <thead>
+                  <tr>
+                   <th>Customer ID:</th>
+                  <th>ItemName:</th>
+                  <th>ItemType:</th>
+                  <th>Qunatity:</th>
+                  <th>TotalAmount:</th>
+                  <th>grandTotal</th>
+                   <th>Delivered Status</th>
+                </tr>
+                 </thead>
+                <tr *ngFor="let orderList of ourOrders">
+                  <td>{{orderList._id}}</td>
+                  <td>{{orderList.IcecrreamName}}</td>
+                  <td>{{orderList.IcecreamType}}</td>
+                  <td>{{orderList.Qunatity}}</td>
+                  <td>{{orderList.TotalAmount}}</td>
+                  <td>{{orderList.grandTotal}}</td>
+                </tr>
+              </table>
+             
+              </div>
+<button type="button" class="btn btn-primary"(click)="print_page()">Print</button>
+          
